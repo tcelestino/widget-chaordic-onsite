@@ -1,1 +1,57 @@
 @import 'normalize';
+@import 'vendors/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, address, blockquote, cite, ul, ol, dl, section, article, figure, fieldset, label, input, textarea, p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 10px;
+}
+address {
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+.widget {
+  background: url('/assets/images/widget-bg-header.jpg') repeat-x top;
+  border: $widget-border;
+  border-radius: $widget-border-radius;
+  width: $widget-width;
+  display: flex;
+  .widget-header {
+    color: $widget-header-color;
+    height: $widget-header-height;
+    font-weight: bold;
+    font-family: $base-font-family;
+    line-height: $widget-header-height;
+  }
+  .widget-header-title {
+    font-size: $widget-header-font-size;
+  }
+}
+.products-view {
+  &.viewed {
+    width: 190px;
+  }
+  .products-list {
+    list-style: none;
+    padding: 10px;
+  }
+  .product-list-item {
+    width: 170px;
+    display: inline-block;
+  }
+}
+.viewed {
+  .widget-header {
+    padding-left: 9px;
+  }
+}
