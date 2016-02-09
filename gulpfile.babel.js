@@ -10,7 +10,7 @@ const SRC = {
   scss: __dirname + '/src/scss/**/*.scss',
   components: __dirname + '/src/components/',
   js: __dirname + '/src/js/**/*.js',
-  images: __dirname + '/src/images/*.png'
+  images: __dirname + '/src/images/*.jpg'
 };
 
 // path form dist
@@ -30,6 +30,7 @@ gulp.task('server', ['sass', 'js'], () => {
 
     gulp.watch(SRC.scss, ['sass']);
     gulp.watch(SRC.js, ['js']);
+    gulp.watch(SRC.images, ['images']);
     gulp.watch("www/*.html").on('change', server.reload);
 });
 
@@ -58,5 +59,5 @@ gulp.task('images', () => {
     .pipe(gulp.dest(DIST.images));
 });
 
-gulp.task('default', ['server']);
+gulp.task('default', ['server', 'images']);
 gulp.task('prod', () => console.log('Produção'));
