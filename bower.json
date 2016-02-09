@@ -1,0 +1,23 @@
+{
+  "name": "widget-chaordic-onsite",
+  "description": "Widget from Choardic OnSite",
+  "main": "gulp.babel.js",
+  "authors": [
+    "Tiago Celestino"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "chaordic onsite",
+    "javascript",
+    "RESTFul"
+  ],
+  "moduleType": [],
+  "homepage": "tcelestino.github.io/widget-choardic-onsite",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

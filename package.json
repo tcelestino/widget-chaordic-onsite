@@ -1,0 +1,33 @@
+{
+  "name": "widget-chaordic-onsite",
+  "version": "1.0.0",
+  "description": "Widget from Choardic OnSite",
+  "main": "gulp.babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bitbucket.org/tcelestino/widget-chaordic-onsite"
+  },
+  "keywords": [
+    "chaordic onsite",
+    "javascript",
+    "RESTFul"
+  ],
+  "author": "Tiago Celestino",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.2",
+    "node-normalize-scss": "^1.2.0"
+  }
+}
