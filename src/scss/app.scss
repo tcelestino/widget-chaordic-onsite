@@ -61,7 +61,15 @@ a {
   .products-list {
     list-style: none;
     padding: 5px;
+    margin-top: 8px;
     overflow: hidden;
+  }
+  .product-loading {
+    background: url('/assets/images/loader.gif') no-repeat 0 0;
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
   }
   .product-list-item {
     width: 170px;
@@ -167,10 +175,17 @@ a {
   }
   .carousel-wrapper {
     margin: 0 auto;
-    width: 700px;
+    width: 720px;
     overflow: hidden;
   }
   ul {
     margin: 0;
+    transition: margin-left 0.5s linear;
+  }
+  li {
+    //margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
