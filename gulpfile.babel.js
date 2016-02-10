@@ -10,7 +10,7 @@ const SRC = {
   scss: __dirname + '/src/scss/**/*.scss',
   components: __dirname + '/src/components/',
   js: __dirname + '/src/js/**/*.js',
-  images: __dirname + '/src/images/*.jpg'
+  images: __dirname + '/src/images/*.{jpg,png}'
 };
 
 // path form dist
