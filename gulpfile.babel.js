@@ -47,7 +47,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-  return gulp.src(SRC.js)
+  return gulp.src(['src/components/lodash/lodash.js', 'src/js/app.js'])
     .pipe($.concat('app.js'))
     .pipe(gulp.dest(DIST.js))
     .pipe(server.stream());

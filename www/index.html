@@ -103,6 +103,36 @@
       </div>
     </section>
   </section>
+  <script type="text/x-handlebars-template" id="product-list-template">
+    {{#each data}}
+    <li class="product-list-item">
+      <article class="product-info" id="{{id}}">
+        <a href="{{url}}" target="_blank" title="{{title}}">
+          <figure class="product-thumbnail">
+            <img src="{{thumbnail}}" alt="{{title}}">
+          </figure>
+          <p class="product-describe">{{titleTruncate}}</p>
+          <div class="product-prices">
+            {{#if oldPrice}}
+              <span class="product-old-price">De: {{oldPrice}}</span>
+            {{/if}}
+            <span class="product-price-total">Por: <strong>{{price}}</strong></span>
+            <span class="product-price-parcelas">{{installments}}</span>
+          </div>
+        </a>
+      </article>
+    </li>
+    {{/each}}
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script src="/assets/js/app.js"></script>
+  <script type="text/javascript">
+    function X (data) {
+      WidgetChaordicOnSite.init({
+        data: data
+      });
+    }
+  </script>
+  <script src="http://roberval.chaordicsystems.com/challenge/challenge.json?callback=x"></script>
 </body>
 </html>

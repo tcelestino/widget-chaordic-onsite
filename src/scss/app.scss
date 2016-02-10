@@ -61,10 +61,12 @@ a {
   .products-list {
     list-style: none;
     padding: 5px;
+    overflow: hidden;
   }
   .product-list-item {
     width: 170px;
-    display: inline-block;
+    float: left;
+    //display: inline-block;
     padding: 5px;
     transition: background 0.8s ease-in-out;
     vertical-align: top;
@@ -110,6 +112,7 @@ a {
   }
   .products-list {
     position: relative;
+    overflow: hidden;
     &:after {
       border-right: 1px solid $grey;
       content: '';
@@ -168,6 +171,6 @@ a {
     overflow: hidden;
   }
   ul {
-    width: 1000%;
+    margin: 0;
   }
 }
