@@ -8,9 +8,7 @@ import browserSync from 'browser-sync';
 // path from sources
 const SRC = {
   scss: __dirname + '/src/scss/**/*.scss',
-  components: __dirname + '/src/components/',
-  js: __dirname + '/src/js/**/*.js',
-  images: __dirname + '/src/images/*.{jpg,png}'
+  images: __dirname + '/src/images/*.{jpg,png,gif}'
 };
 
 // path form dist
@@ -30,7 +28,6 @@ gulp.task('server', ['sass', 'js'], () => {
 
     gulp.watch(SRC.scss, ['sass']);
     gulp.watch(SRC.js, ['js']);
-    gulp.watch(SRC.images, ['images']);
     gulp.watch("www/*.html").on('change', server.reload);
 });
 
@@ -47,7 +44,12 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-  return gulp.src(['src/components/lodash/lodash.js', 'src/js/app.js'])
+  return gulp.src(
+    [
+      'src/components/lodash/lodash.js',
+      'src/js/carousel.js',
+      'src/js/app.js'
+    ])
     .pipe($.concat('app.js'))
     .pipe(gulp.dest(DIST.js))
     .pipe(server.stream());
