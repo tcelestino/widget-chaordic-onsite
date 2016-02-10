@@ -54,6 +54,8 @@
   "browser": true,
   "node": true,
   "globals": {
-    "Handlerbars": true
+    "Handlebars": true,
+    "WidgetChaordicOnSite": true,
+    "_": true
   }
 }
