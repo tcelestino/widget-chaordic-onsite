@@ -58,7 +58,8 @@ WidgetChaordicOnSite = (function () {
 
     nextItem: function (evt) {
       var marginLeft = this.directionControl('next');
-      if (marginLeft >= this.carouselWidth) {
+      var maxWidth = (this.carouselWidth - ((this.itensCount - 4) * carousel.defaults.widthItem)) * -1; //-1020
+      if (marginLeft < maxWidth) {
         return;
       }
       console.log(marginLeft);
