@@ -1,4 +1,4 @@
-# Widget Chaordic OnSite Chaordic
+# Widget Chaordic OnSite
 
 ## How to use
 
