@@ -29,16 +29,22 @@ var DIST = {
 
 var $ = gulpLoadPlugins();
 var server = browserSync.create();
+var serverConfig = {
+  server: "./www",
+  port: 8080
+};
 var normalize = nodeNormalize.includePaths;
 
 gulp.task('server', ['css:dev', 'js:dev'], function() {
-    server.init({
-        server: "./www"
-    });
+    server.init(serverConfig);
 
     gulp.watch(SRC.scss, ['css:dev']);
     gulp.watch(SRC.js, ['js:dev']);
     gulp.watch("www/*.html").on('change', server.reload);
+});
+
+gulp.task('server_build', ['images', 'css', 'prefixer', 'js', 'clean'], function () {
+  server.init(serverConfig);
 });
 
 gulp.task('images', function() {
@@ -99,4 +105,4 @@ gulp.task('js', function() {
 });
 
 gulp.task('default', ['server', 'images']);
-gulp.task('build', ['images', 'css', 'prefixer', 'js', 'clean']);
+gulp.task('build', ['server_build']);
