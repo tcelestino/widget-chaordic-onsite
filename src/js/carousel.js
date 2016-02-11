@@ -5,6 +5,7 @@ Carousel = (function () {
   var defaults = {
     widthItem: 180,
     itemPerPage: 1,
+    interval: 200,
     itemView: 4
   };
 
@@ -21,8 +22,8 @@ Carousel = (function () {
     },
 
     events: function () {
-      this.btnPrev.addEventListener('click', _.debounce(this.prevItem.bind(this), 500));
-      this.btnNext.addEventListener('click', _.debounce(this.nextItem.bind(this), 500));
+      this.btnPrev.addEventListener('click', _.debounce(this.prevItem.bind(this), defaults.interval));
+      this.btnNext.addEventListener('click', _.debounce(this.nextItem.bind(this), defaults.interval));
     },
 
     prevItem: function (evt) {
@@ -47,6 +48,7 @@ Carousel = (function () {
       }
       this.lists.style.marginLeft = marginLeft + 'px';
       evt.preventDefault();
+      evt.stopPropagation();
     },
 
     getWrapperMarginLeft: function () {
