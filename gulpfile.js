@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var nodeNormalize = require('node-normalize-scss');
 var browserSync = require('browser-sync');
+var rimraf = require('rimraf');
 
 // path from sources
 var SRC = {
@@ -11,6 +12,8 @@ var SRC = {
   css: __dirname + '/src/css/*.css',
   js: [
     'src/components/lodash/lodash.js',
+    'src/components/handlebars/handlebars.js',
+    'src/js/helpers.js',
     'src/js/carousel.js',
     'src/js/app.js'
   ],
@@ -44,9 +47,8 @@ gulp.task('images', function() {
     .pipe(gulp.dest(DIST.images));
 });
 
-gulp.task('clean', function () {
-  return gulp.src('src/css/', {read: false})
-    .pipe($.clean());
+gulp.task('clean', function (cb) {
+  rimraf('./src/css', cb);
 });
 
 // dev tasks
