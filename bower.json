@@ -21,6 +21,7 @@
     "tests"
   ],
   "devDependencies": {
-    "lodash": "^4.3.0"
+    "lodash": "^4.3.0",
+    "handlebars": "^4.0.5"
   }
 }
