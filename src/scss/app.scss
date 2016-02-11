@@ -11,8 +11,8 @@ h1, h2, h3, h4, h5, address, blockquote, cite, ul, ol, dl, section, article, fig
   padding: 0;
 }
 body {
-  margin: 10px;
   font: $base-font-size $base-font-family;
+  margin: 10px;
 }
 address {
   font-style: normal;
@@ -26,31 +26,32 @@ a {
 }
 .widget {
   background: url('/assets/images/widget-bg-header.jpg') repeat-x top;
-  border: $widget-border;
   border-radius: $widget-border-radius;
-  width: $widget-width;
+  border: $widget-border;
+  box-shadow: $widget-box-shadow;
   display: flex;
+  overflow: hidden;
   padding-bottom: 30px;
   position: relative;
-  overflow: hidden;
+  width: $widget-width;
   .widget-header {
     color: $widget-header-color;
-    height: $widget-header-height;
-    font-weight: bold;
     font-family: $base-font-family;
+    font-weight: bold;
+    height: $widget-header-height;
     line-height: $widget-header-height;
   }
   .widget-header-title {
     font-size: $widget-header-font-size;
   }
   &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
     background: linear-gradient($white, $blue-soft-2);
+    bottom: 0;
+    content: '';
+    height: 30px;
+    left: 0;
+    position: absolute;
+    width: 100%;
     z-index: 10;
   }
 }
@@ -60,24 +61,24 @@ a {
   }
   .products-list {
     list-style: none;
-    padding: 5px;
     margin-top: 8px;
     overflow: hidden;
+    padding: 5px;
   }
   .product-loading {
     background: url('/assets/images/loader.gif') no-repeat 0 0;
     display: block;
+    height: 24px;
     margin: 0 auto;
     width: 24px;
-    height: 24px;
   }
   .product-list-item {
-    width: 170px;
-    float: left;
     //display: inline-block;
+    float: left;
     padding: 5px;
     transition: background 0.8s ease-in-out;
     vertical-align: top;
+    width: 170px;
     zoom: 1;
     *display: inline; // hack to ie
     &:hover {
@@ -89,10 +90,10 @@ a {
     }
   }
   .product-thumbnail {
-    text-align: center;
-    width: 100%;
     border: 2px solid #fff;
     margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
   }
   .product-describe, .product-prices {
     font-size: em(11px);
@@ -119,8 +120,8 @@ a {
     padding-left: 9px;
   }
   .products-list {
-    position: relative;
     overflow: hidden;
+    position: relative;
     &:after {
       border-right: 1px solid $grey;
       content: '';
@@ -144,17 +145,17 @@ a {
 // carousel
 .carousel {
   position: relative;
-  z-index: 10;
   width: 100%;
+  z-index: 10;
   .controls {
     @include image-replacement;
     background: url('/assets/images/carousel-controls.png') no-repeat;
     display: block;
+    height: 34px;
+    margin-top: 60px;
     position: absolute;
     top: 0;
-    margin-top: 60px;
     width: 17px;
-    height: 34px;
     z-index: 10;
   }
   .control-prev {
@@ -167,16 +168,16 @@ a {
   }
   .control-next {
     background-position: -17px 0;
-    right: 0;
     margin-right: 13px;
+    right: 0;
     &:hover {
       background-position: -17px -34px;
     }
   }
   .carousel-wrapper {
     margin: 0 auto;
-    width: 720px;
     overflow: hidden;
+    width: 720px;
   }
   ul {
     margin: 0;
