@@ -1,4 +1,4 @@
-# Widget Chaordic OnSite Chaordic
+# Widget Chaordic OnSite
 
 ## How to use
 
@@ -17,5 +17,5 @@ $ sudo bower install
 Run app
 
 ``
-$ npm start #this open your browser
+$ npm start
 ``
