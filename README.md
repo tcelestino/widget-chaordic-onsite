@@ -17,5 +17,5 @@ $ sudo bower install
 Run app
 
 ``
-$ npm start #this open your browser
+$ npm start
 ``
