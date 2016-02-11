@@ -22,6 +22,7 @@ $ sudo bower install
 ### Dev
 
 Run app
+
 ``
 $ npm start
 ``
@@ -30,8 +31,4 @@ $ npm start
 
 ``
 $ gulp build
-``
-
-``
-$ node server.js
 ``
