@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var chalk = require('chalk');
-var port = 8180;
+var port = 8080;
 
 app.use(express.static('www'));
 app.get('/', function(req, res) {
