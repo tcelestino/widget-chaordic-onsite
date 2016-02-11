@@ -6,7 +6,7 @@ var path = require('path');
 var chalk = require('chalk');
 var port = 8080;
 
-app.use(express.static('www'));
+app.use(express.static(__dirname + '/www'));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/www/index.html'));
 });
