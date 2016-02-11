@@ -2,7 +2,6 @@
   "name": "widget-chaordic-onsite",
   "version": "1.0.0",
   "description": "Widget from Choardic OnSite",
-  "main": "gulp.babel.js",
   "scripts": {
     "start": "gulp"
   },
@@ -30,5 +29,9 @@
     "gulp-sass": "^2.2.0",
     "gulp-uglify": "^1.5.2",
     "node-normalize-scss": "^1.2.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "express": "^4.13.4"
   }
 }
