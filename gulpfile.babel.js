@@ -97,4 +97,4 @@ gulp.task('js', () => {
 });
 
 gulp.task('default', ['server', 'images']);
-gulp.task('prod', ['images', 'css', 'prefixer', 'js', 'clean']);
+gulp.task('build', ['images', 'css', 'prefixer', 'js', 'clean']);
