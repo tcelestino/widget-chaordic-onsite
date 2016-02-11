@@ -8,32 +8,11 @@ WidgetChaordicOnSite = (function () {
     template: '#product-list-template',
   };
 
-  var privates = {
-    $: function (el) {
-      return document.querySelector(el);
-    },
-    ajax: function () {
-      return new XMLHttpRequest();
-    },
-    template: function (source) {
-      return Handlebars.compile(source, { noEscape: true });
-    },
-    truncate: function (string, length, reticence) {
-      if (string.length > length) {
-        var suspension = (reticence ? reticence : '...');
-        return string.slice(0, length - suspension.length) + suspension;
-      }
-
-      return string;
-    }
-  };
-
   var app = {
-
     // initialize widget
     init: function (options) {
       this.options = _.extend(defaults, options);
-      this.template = privates.template(privates.$(this.options.template).innerHTML);
+      this.template = Helpers.template(Helpers.$(this.options.template).innerHTML);
       this.viewReference(this.getData('reference'));
       this.viewRecommendation(this.getData('recommendation'));
       Carousel.init();
@@ -53,7 +32,7 @@ WidgetChaordicOnSite = (function () {
 
     // set content with template
     setContent: function (el, context) {
-      privates.$(el).innerHTML = this.template({ data: context });
+      Helpers.$(el).innerHTML = this.template({ data: context });
     },
 
     // parse data JSON
@@ -81,7 +60,7 @@ WidgetChaordicOnSite = (function () {
         id: content.businessId,
         thumbnail: content.imageName,
         title: content.name,
-        titleTruncate: privates.truncate(content.name, 80, '...'),
+        titleTruncate: Helpers.truncate(content.name, 80, '...'),
         price: content.price,
         oldPrice: (typeof content.oldPrice === null) ? '' : content.oldPrice,
         installments: content.productInfo.paymentConditions,
