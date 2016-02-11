@@ -3,8 +3,9 @@ Carousel = (function () {
   'use strict';
 
   var defaults = {
-    widthItem: 170,
-    itemPerPage: 1
+    widthItem: 180,
+    itemPerPage: 1,
+    itemView: 4
   };
 
   var plugin = {
@@ -13,21 +14,22 @@ Carousel = (function () {
       this.btnPrev = document.querySelector('.control-prev');
       this.btnNext = document.querySelector('.control-next');
       this.itensCount = parseInt(this.lists.children.length, 10);
-      this.carouselWidth = this.itensCount * defaults.widthItem + 10;
+      this.carouselWidth = this.itensCount * defaults.widthItem;
       this.events();
 
       this.lists.style.width = this.carouselWidth + 'px';
     },
 
     events: function () {
-      this.btnPrev.addEventListener('click', this.prevItem.bind(this));
-      this.btnNext.addEventListener('click', this.nextItem.bind(this));
+      this.btnPrev.addEventListener('click', _.debounce(this.prevItem.bind(this), 500));
+      this.btnNext.addEventListener('click', _.debounce(this.nextItem.bind(this), 500));
     },
 
     prevItem: function (evt) {
       var marginLeft = this.directionControl('prev');
       if (marginLeft > 0) {
-         return;
+        this.lists.style.marginLeft = 0 + 'px';
+        return;
       }
 
       this.lists.style.marginLeft = marginLeft + 'px';
@@ -38,8 +40,9 @@ Carousel = (function () {
 
     nextItem: function (evt) {
       var marginLeft = this.directionControl('next');
-      var maxWidth = (this.carouselWidth - ((this.itensCount - 4) * defaults.widthItem)) * -1; //-1020
+      var maxWidth = (this.carouselWidth - defaults.itemView * defaults.widthItem) * -1;
       if (marginLeft < maxWidth) {
+        this.lists.style.marginLeft = maxWidth + 'px';
         return;
       }
       this.lists.style.marginLeft = marginLeft + 'px';
