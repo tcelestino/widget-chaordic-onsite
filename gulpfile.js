@@ -1,12 +1,12 @@
 'use strict';
 
-import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import nodeNormalize from 'node-normalize-scss';
-import browserSync from 'browser-sync';
+var gulp = require('gulp');
+var gulpLoadPlugins = require('gulp-load-plugins');
+var nodeNormalize = require('node-normalize-scss');
+var browserSync = require('browser-sync');
 
 // path from sources
-const SRC = {
+var SRC = {
   scss: __dirname + '/src/scss/**/*.scss',
   css: __dirname + '/src/css/*.css',
   js: [
@@ -18,17 +18,17 @@ const SRC = {
 };
 
 // path form dist
-const DIST = {
+var DIST = {
   css: __dirname + '/www/assets/css/',
   js: __dirname + '/www/assets/js/',
   images: __dirname + '/www/assets/images/'
 };
 
-let $ = gulpLoadPlugins();
-let server = browserSync.create();
-let normalize = nodeNormalize.includePaths;
+var $ = gulpLoadPlugins();
+var server = browserSync.create();
+var normalize = nodeNormalize.includePaths;
 
-gulp.task('server', ['css:dev', 'js:dev'], () => {
+gulp.task('server', ['css:dev', 'js:dev'], function() {
     server.init({
         server: "./www"
     });
@@ -38,7 +38,7 @@ gulp.task('server', ['css:dev', 'js:dev'], () => {
     gulp.watch("www/*.html").on('change', server.reload);
 });
 
-gulp.task('images', () => {
+gulp.task('images', function() {
   return gulp.src(SRC.images)
     .pipe($.imagemin())
     .pipe(gulp.dest(DIST.images));
@@ -50,7 +50,7 @@ gulp.task('clean', function () {
 });
 
 // dev tasks
-gulp.task('css:dev', () => {
+gulp.task('css:dev', function() {
   return gulp.src(SRC.scss)
     .pipe($.sass(
       {
@@ -61,7 +61,7 @@ gulp.task('css:dev', () => {
     .pipe(server.stream());
 });
 
-gulp.task('js:dev', () => {
+gulp.task('js:dev', function() {
   return gulp.src(SRC.js)
     .pipe($.concat('app.js'))
     .pipe(gulp.dest(DIST.js))
@@ -69,7 +69,7 @@ gulp.task('js:dev', () => {
 });
 
 // prod tasks
-gulp.task('css', () => {
+gulp.task('css', function() {
   return gulp.src(SRC.scss)
     .pipe($.sass({
       includePaths: normalize,
@@ -78,7 +78,7 @@ gulp.task('css', () => {
     .pipe(gulp.dest('src/css'));
 });
 
-gulp.task('prefixer', () => {
+gulp.task('prefixer', function() {
   return gulp.src(SRC.css)
     .pipe($.autoprefixer(
       {
@@ -89,7 +89,7 @@ gulp.task('prefixer', () => {
     .pipe(gulp.dest(DIST.css));
 });
 
-gulp.task('js', () => {
+gulp.task('js', function() {
   return gulp.src(SRC.js)
     .pipe($.uglify())
     .pipe($.concat('app.js'))
