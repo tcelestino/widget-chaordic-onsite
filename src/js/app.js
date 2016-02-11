@@ -7,7 +7,7 @@ WidgetChaordicOnSite = (function () {
   var defaults = {
     template: '#product-list-template',
   };
-  
+
   var privates = {
     $: function (el) {
       return document.querySelector(el);
@@ -72,7 +72,7 @@ WidgetChaordicOnSite = (function () {
 
     // return data JSON
     getData: function (ref) {
-      return this.options.data.data[ref];
+      return this.options.json.data[ref];
     },
 
     // template to data JSON

@@ -23,7 +23,7 @@
       </header>
       <div class="carousel">
         <a href="#prev" class="controls control-prev">Anterior</a>
-        <a href="#prev" class="controls control-next">Anterior</a>
+        <a href="#next" class="controls control-next">Próximo</a>
         <div class="carousel-wrapper">
           <ul class="products-list">
             <span class="product-loading"></span>
@@ -36,9 +36,9 @@
     {{#each data}}
     <li class="product-list-item">
       <article class="product-info" id="{{id}}">
-        <a href="{{url}}" target="_blank" title="{{title}}">
+        <a href="{{url}}" target="_blank" title="">
           <figure class="product-thumbnail">
-            <img src="{{thumbnail}}" alt="{{title}}">
+            <img src="{{thumbnail}}" alt="">
           </figure>
           <p class="product-describe">{{titleTruncate}}</p>
           <div class="product-prices">
@@ -58,7 +58,7 @@
   <script type="text/javascript">
     function X (data) {
       WidgetChaordicOnSite.init({
-        data: data
+        json: data
       });
     }
   </script>
